@@ -9,7 +9,7 @@ function LearningWorkspace({
   onBack,
 }: LearningWorkspaceProps) {
     const [studentAnswer, setStudentAnswer] = useState('')
-const [submittedAnswer, setSubmittedAnswer] = useState<string | null>(null)
+    const [submittedAnswer, setSubmittedAnswer] = useState<string | null>(null)
 
 function handleSubmitAnswer(event: React.FormEvent<HTMLFormElement>) {
   event.preventDefault()
@@ -50,6 +50,36 @@ function handleSubmitAnswer(event: React.FormEvent<HTMLFormElement>) {
         </p>
 
         <h3>What comes to mind when you think about {topic}?</h3>
+
+<form className="diagnostic-form" onSubmit={handleSubmitAnswer}>
+  <label htmlFor="student-answer">
+    Your thoughts
+  </label>
+
+  <textarea
+    id="student-answer"
+    value={studentAnswer}
+    onChange={(event) => setStudentAnswer(event.target.value)}
+    placeholder="Write what you know, or simply say 'I'm starting from zero'..."
+    rows={5}
+  />
+
+  <button type="submit" disabled={!studentAnswer.trim()}>
+    Share my thoughts →
+  </button>
+</form>
+
+{submittedAnswer !== null && (
+  <div className="diagnostic-response">
+    <p className="eyebrow">YOUR RESPONSE</p>
+    <p>{submittedAnswer}</p>
+    <p>
+      Your response has been captured for this session.
+      Next, Olùkọ́ will use it to decide where to begin.
+    </p>
+  </div>
+)}
+
       </section>
     </main>
   )
