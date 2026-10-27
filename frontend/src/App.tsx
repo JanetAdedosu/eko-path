@@ -12,6 +12,10 @@ function App() {
 
   function handleStartLearning() {
     const selectedTopic = topic.trim()
+    if (!selectedTopic) return
+
+  setActiveTopic(selectedTopic)
+}
 
     if (activeTopic !== null) {
   return (
@@ -25,13 +29,13 @@ function App() {
 }
     
 
-    if (!selectedTopic) return
+  //   if (!selectedTopic) return
 
-    setActiveTopic(selectedTopic)
+  //   setActiveTopic(selectedTopic)
 
-    // // Temporary action until we build the learning workspace.
-    // alert(`Olùkọ́ will help you understand ${selectedTopic}.`)
-  }
+  //   // // Temporary action until we build the learning workspace.
+  //   // alert(`Olùkọ́ will help you understand ${selectedTopic}.`)
+  // }
 
   return (
     <div className="app">
