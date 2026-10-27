@@ -1,4 +1,4 @@
-.counter {
+/* .counter {
   font-size: 16px;
   padding: 5px 10px;
   border-radius: 5px;
@@ -181,4 +181,341 @@
     right: 0;
     border-right-color: var(--border);
   }
+} */
+:root {
+  font-family: Inter, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  color: #173e30;
+  background: #f7f7f0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.app {
+  min-height: 100vh;
+  background: #f7f7f0;
+}
+
+.header {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #dde5d9;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-logo {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.brand-name {
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.header-caption {
+  color: #607568;
+  font-size: 14px;
+}
+
+.hero {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 135px 24px 80px;
+  text-align: center;
+}
+
+.eyebrow {
+  color: #62876d;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 22px;
+}
+
+.hero h1 {
+  font-size: clamp(36px, 5vw, 62px);
+  line-height: 1.12;
+  letter-spacing: -2px;
+  margin: 0;
+  font-weight: 650;
+}
+
+.hero h1 span {
+  color: #328466;
+}
+
+.description {
+  color: #6b776e;
+  font-size: 18px;
+  line-height: 1.7;
+  margin: 25px 0 45px;
+}
+
+.topic-form {
+  background: white;
+  border: 1px solid #d7e3d9;
+  border-radius: 22px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 14px 40px rgba(26, 65, 43, 0.07);
+}
+
+.topic-form input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  padding: 16px;
+  font-size: 15px;
+  color: #173e30;
+}
+
+.topic-form input::placeholder {
+  color: #9aa69c;
+}
+
+.topic-form button {
+  background: #164f3d;
+  color: white;
+  border: none;
+  border-radius: 13px;
+  padding: 17px 24px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.topic-form button:hover:not(:disabled) {
+  background: #226b51;
+}
+
+.topic-form button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.helper-text {
+  margin-top: 22px;
+  font-size: 13px;
+  color: #849087;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .header {
+    padding: 20px;
+  }
+
+  .header-caption {
+    display: none;
+  }
+
+  .hero {
+    padding-top: 95px;
+  }
+
+  .topic-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .topic-form button {
+    width: 100%;
+  }
+}
+
+
+
+
+/* ==========================================
+   Ẹ̀kọ́ Path — Notebook-inspired design
+   ========================================== */
+
+/* Soft notebook paper background */
+.app {
+  background-color: #faf9f3;
+  background-image:
+    linear-gradient(
+      to bottom,
+      transparent 35px,
+      rgba(67, 122, 91, 0.07) 36px
+    );
+  background-size: 100% 36px;
+  min-height: 100vh;
+}
+
+/* Clean header above the notebook paper */
+.header {
+  background: rgba(250, 249, 243, 0.96);
+  backdrop-filter: blur(12px);
+  position: relative;
+  z-index: 2;
+}
+
+/* Use your original glossy green logo */
+.brand-logo {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+  border-radius: 14px;
+}
+
+/* Notebook writing area */
+.hero {
+  position: relative;
+  max-width: 900px;
+  min-height: 520px;
+  margin: 70px auto 0;
+  padding: 100px 75px 90px 95px;
+
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid #e7e9dc;
+  border-radius: 12px;
+
+  box-shadow:
+    0 20px 60px rgba(30, 65, 45, 0.06),
+    0 3px 10px rgba(30, 65, 45, 0.03);
+
+  background-image:
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 35px,
+      rgba(60, 116, 82, 0.08) 36px
+    );
+}
+
+/* Classic notebook margin line */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 64px;
+  width: 1px;
+  background: rgba(202, 111, 111, 0.25);
+}
+
+/* Small notebook binding holes */
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 65px;
+  left: 20px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #e9ece4;
+
+  box-shadow:
+    0 140px 0 #e9ece4,
+    0 280px 0 #e9ece4,
+    0 420px 0 #e9ece4;
+
+  border: 1px solid #dce2d8;
+}
+
+/* Make the heading feel editorial */
+.hero h1 {
+  font-weight: 650;
+  letter-spacing: -2.5px;
+  line-height: 1.15;
+}
+
+/* Keep the topic field prominent */
+.topic-form {
+  position: relative;
+  z-index: 1;
+  border-radius: 16px;
+  box-shadow: 0 8px 28px rgba(30, 65, 45, 0.07);
+}
+
+/* Mobile notebook adjustments */
+@media (max-width: 600px) {
+  .hero {
+    margin: 25px 12px;
+    padding: 85px 24px 65px 44px;
+    min-height: 520px;
+  }
+
+  .hero::before {
+    left: 30px;
+  }
+
+  .hero::after {
+    left: 8px;
+    width: 9px;
+    height: 9px;
+  }
+
+  .hero h1 {
+    letter-spacing: -1.5px;
+  }
+
+  .brand-logo {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+/* Final homepage refinements */
+
+.hero {
+  margin-top: 35px;
+}
+
+.hero h1 {
+  font-size: clamp(34px, 4.2vw, 52px);
+  letter-spacing: -1.8px;
+}
+
+.topic-form button:not(:disabled) {
+  background: #164f3d;
+}
+
+.topic-form button:not(:disabled):hover {
+  background: #237052;
+}
+
+/* Keep notebook lines subtle */
+.hero {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 35px,
+    rgba(60, 116, 82, 0.045) 36px
+  );
 }
