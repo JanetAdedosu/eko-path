@@ -8,6 +8,19 @@ function LearningWorkspace({
   topic,
   onBack,
 }: LearningWorkspaceProps) {
+    const [studentAnswer, setStudentAnswer] = useState('')
+const [submittedAnswer, setSubmittedAnswer] = useState<string | null>(null)
+
+function handleSubmitAnswer(event: React.FormEvent<HTMLFormElement>) {
+  event.preventDefault()
+
+  const answer = studentAnswer.trim()
+  if (!answer) return
+
+  setSubmittedAnswer(answer)
+}
+
+
   return (
     <main className="learning-workspace">
       <button
