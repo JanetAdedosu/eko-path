@@ -384,3 +384,56 @@ input {
     margin: 20px auto;
   }
 }
+
+/* for students reply */
+.diagnostic-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 25px;
+}
+
+.diagnostic-form label {
+  font-weight: 600;
+  color: #164f3d;
+}
+
+.diagnostic-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 16px;
+  border: 1px solid #d8e2d8;
+  border-radius: 12px;
+  font: inherit;
+  resize: vertical;
+  background: #fff;
+}
+
+.diagnostic-form textarea:focus {
+  outline: 2px solid #328466;
+  outline-offset: 2px;
+}
+
+.diagnostic-form button {
+  align-self: flex-start;
+  background: #164f3d;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 13px 22px;
+  font: inherit;
+  cursor: pointer;
+}
+
+.diagnostic-form button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.diagnostic-response {
+  margin-top: 30px;
+  padding: 20px;
+  background: #f1f7f0;
+  border-radius: 12px;
+  overflow-wrap: anywhere;
+}
